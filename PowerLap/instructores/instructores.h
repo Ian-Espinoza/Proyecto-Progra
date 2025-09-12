@@ -12,7 +12,9 @@ private:
     string telefono;
     string correo;
     string fechaNaci;
-    especialidades *esp;
+    especialidades** esp;
+    int can;
+    int max;
 public:
     instructor(string, string, string, string, string);
     void agregarEspecialidad(especialidades *);
@@ -22,7 +24,7 @@ public:
     string getTelefono();
     string getCorreo();
     string getFechaNaci();
-    especialidades getEspecialidades();
+    especialidades** getEspecialidades();
     string tostring();
 };
 #endif
