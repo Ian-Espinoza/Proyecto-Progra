@@ -3,6 +3,7 @@
 #ifndef SUCURSALES_H
 #define SUCURSALES_H
 using namespace std;
+
 class cliente;
 class instructores;
 class claseGrupal;

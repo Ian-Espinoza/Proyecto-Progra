@@ -1,11 +1,9 @@
 #ifndef CLASEGRUPAL_H
 #define CLASEGRUPAL_H
-
 #include <iostream>
 #include <string>
 using namespace std;
 
-// Forward declarations
 class especialidades;
 class matricula;
 class cliente;

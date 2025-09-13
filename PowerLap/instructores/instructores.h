@@ -14,6 +14,7 @@ private:
     string fechaNaci;
     especialidades** esp;
     int can;
+    int tam;
     int max;
 public:
     instructor(string, string, string, string, string);

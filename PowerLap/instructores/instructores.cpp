@@ -12,7 +12,7 @@ instructor::instructor(string cedula, string nombre, string telefono, string cor
     esp = new especialidades*[max];
 }
 void instructor::agregarEspecialidad(especialidades* e) {
-    if (can < max) { 
+    if (can < tam) { 
         esp[can++] = e;
     }
 }
