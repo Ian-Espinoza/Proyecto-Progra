@@ -22,7 +22,7 @@ private:
     cliente** matriculados;
     int cantidadMatriculados=0;
     public:
-    claseGrupal(string , especialidades* , string , string , int );
+    claseGrupal(string , especialidades* , string , string , int , instructor* );
     ~claseGrupal();
     
     string getCodigo() { return codigo; }
@@ -46,6 +46,6 @@ private:
     void verificarMatricula(string );
     void listadoMatriculados();
     int getCuposLibres();
-    
+    string tostring();
 };
 #endif
