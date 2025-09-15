@@ -2,6 +2,8 @@
 #define INSTRUCTORES_H
 #include <iostream>
 #include <string>
+#include <sstream>
+#include "especialidades.h"
 using namespace std;
 
 class especialidades;
@@ -12,10 +14,9 @@ private:
     string telefono;
     string correo;
     string fechaNaci;
-    especialidades** esp;
+    especialidades** especialidad;
     int can;
     int tam;
-    int max;
 public:
     instructor(string, string, string, string, string);
     void agregarEspecialidad(especialidades *);
@@ -25,7 +26,8 @@ public:
     string getTelefono();
     string getCorreo();
     string getFechaNaci();
-    especialidades** getEspecialidades();
+    especialidades** getEspecialidad();
     string tostring();
+    ~instructor();
 };
 #endif

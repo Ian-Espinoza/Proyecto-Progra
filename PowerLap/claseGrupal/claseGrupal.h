@@ -11,10 +11,10 @@ class cliente;
 class claseGrupal {
 private:
     string codigo;
-    especialidades* esp;
-    string salon;
-    string horario;
     int cupoMax;
+    string salon;
+    especialidades* esp;
+    string horario;
     int cupoDisponible;
     matricula** matriculas; 
     int can;     

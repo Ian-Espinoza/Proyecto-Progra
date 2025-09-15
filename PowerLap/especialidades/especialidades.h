@@ -5,15 +5,16 @@ using namespace std;
 class especialidad
 {
 private:  
-    string crossFit;
-    string HIIT;
-    string TRX;
-    string Pesas;
-    string spinning;
-    string cardio;
-    string yoga;
-    string zumba;
+    string *nombre;
+    int can=0;
+    int tam=2;
 public:
-
+    especialidad();
+    void agregar(string);
+    string getEspecialidad(int );
+    int getCan();
+    int getTam();
+    void mostrar();
+    ~especialidad();
 };
 #endif
