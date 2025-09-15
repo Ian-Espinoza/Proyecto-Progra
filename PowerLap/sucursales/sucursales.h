@@ -14,10 +14,11 @@ private:
     string correo;
     string codigo;
     cliente **client;
+    int canClientes;
     instructores **instructor;
+    int canInstructor;
     claseGrupal **clase;
-    int tam;
-    int can;
+    int canClases;
 public:
     sucursales(string, string, string, string, string);
     void agregarCliente(cliente*);

@@ -1,1 +1,2 @@
-#include"reporteMedicion.h"
+#include"reporteMedicion.h" 
+#include <iostream>

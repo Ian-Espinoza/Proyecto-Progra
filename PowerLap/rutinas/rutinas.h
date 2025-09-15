@@ -1,6 +1,7 @@
 #ifndef RUTINAS_H
 #define RUTINAS_H
 #include<iostream>
+#include "ejercicio.h"
 using namespace std;
 class ejercicio;
 class rutinas
