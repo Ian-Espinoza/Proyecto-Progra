@@ -21,10 +21,12 @@ private:
     reporteMedicion **medicion;
     int can;
     int max;
+    bool esAtleta;
     rutinas *rutinaActual;
 
 public:
-    cliente(double, string, string, double, double, string, string, string, char, string);
+    cliente(double, string, string, double, double, string, string, string, char, string, bool);
+
     double getIMC();
     string getCedula();
     string getNombre();
@@ -35,12 +37,32 @@ public:
     string getFechaNaci();
     char getSexo();
     string getFechaInscripción();
+    bool getEsAtleta();
+
+    void setIMC();
+    void setCedula();
+    void setNombre();
+    void setPeso();
+    void setAltura();
+    void setTelefono();
+    void setCorreo();
+    void setFechaNaci();
+    void setSexo();
+    void setFechaInscripción();
+    void setEsAtleta();
+
     void agregarMedicion(reporteMedicion *);
+
     void historialPorFecha();
+
     double calcularIMC(double, double);
+
     string clasificarIMC(double);
+
     int recomendacionAgua(double);
+
     double recomendacionProteina(double, char, bool);
+    
     ~cliente();
 };
 #endif

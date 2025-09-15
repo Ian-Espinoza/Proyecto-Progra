@@ -24,12 +24,12 @@ bool instructor::tieneEspecialidad(especialidades* e) {
     }
     return false;
 }
-string instructor::getCedula() {return cedula;}
-string instructor::getNombre() {return nombre;}
-string instructor::getTelefono() {return telefono;}
-string instructor::getCorreo() { return correo;}
-string instructor::getFechaNaci() { return fechaNaci;}
-especialidades** instructor::getEspecialidades() {return esp;}
+string instructor::getCedula(){return cedula;}
+string instructor::getNombre(){return nombre;}
+string instructor::getTelefono(){return telefono;}
+string instructor::getCorreo(){return correo;}
+string instructor::getFechaNaci(){return fechaNaci;}
+especialidades** instructor::getEspecialidades(){return esp;}
 
 string instructor::tostring() {
     stringstream s;
