@@ -11,7 +11,6 @@
                 "${workspaceFolder}/PowerLap/especialidades✅",
                 "${workspaceFolder}/PowerLap/historial",
                 "${workspaceFolder}/PowerLap/powerlab",
-                "${workspaceFolder}/PowerLap/reporteMedicion",
                 "${workspaceFolder}/PowerLap/sucursales",
                 "${workspaceFolder}/PowerLap/claseGrupal"
             ],
