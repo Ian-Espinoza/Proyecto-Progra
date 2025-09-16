@@ -1,6 +1,15 @@
 #include"claseGrupal.h"
-#include"especialidades.h"
-claseGrupal::claseGrupal(string codigo, especialidades* especialidad, string salon, string horario, int cupoMax, instructor* instructor) {this->codigo = codigo;this->especialidad = especialidad;this->salon = salon;this->horario = horario;this->cupoMax = cupoMax;this->instructores = instructor;cantidadMatriculados = 0;matriculados = new cliente * [cupoMax];}
+#include"especialidad.h"
+claseGrupal::claseGrupal(string codigo, string EspecialidadDeLaClase, string salon, string horario, int cupoMax, instructor* instructores) {
+    this->codigo = codigo;
+    this->EspecialidadDeLaClase = EspecialidadDeLaClase;
+    this->salon = salon;
+    this->horario = horario;
+    this->cupoMax = cupoMax;
+    this->instructores = instructores;
+    this->matriculados = new cliente * [cupoMax];
+    this->cantidadMatriculados = 0;
+}
 
 bool claseGrupal::matricular(cliente* c) {
     if (cantidadMatriculados < cupoMax) {
@@ -20,9 +29,6 @@ void claseGrupal::listadoMatriculados() {
 }
 int claseGrupal::getCuposLibres() {
     return cupoMax - cantidadMatriculados;
-}
-instructor* claseGrupal::getInstructor() {
-    return instructores;
 }
 claseGrupal::~claseGrupal() {
     delete[] matriculados;
@@ -54,7 +60,6 @@ bool claseGrupal::desmatricular(string cedula) {
 
 string claseGrupal::getCodigo() {return codigo;}
 string claseGrupal::getSalon() {return salon;}
-especialidades* claseGrupal::getEspecialidad() {return especialidad;}
 string claseGrupal::getHorario() {return horario;}
 int claseGrupal::getCupoMax() {return cupoMax;}
 int claseGrupal::getCantidadMatriculados() {return cantidadMatriculados;}
@@ -64,18 +69,23 @@ void claseGrupal::setInstructor(instructor* instructor) {this->instructores = in
 void claseGrupal::setCantidadMatriculados(int cantidadMatriculados) {this->cantidadMatriculados = cantidadMatriculados;}
 void claseGrupal::setCupoMax(int cupoMax) {this->cupoMax = cupoMax;}
 void claseGrupal::setHorario(string horario) {this->horario = horario;}
-void claseGrupal::setEspecialidad(especialidades* especialidad) {this->especialidad = especialidad;}
 void claseGrupal::setSalon(string salon) {this->salon = salon;}
 void claseGrupal::setCodigo(string codigo) {this->codigo = codigo;}
 
 string claseGrupal::tostring() {
     stringstream s;
+    s << "===== Detalles de la Clase Grupal =====" << endl;
     s << "Código: " << codigo << endl;
-     s << "Instructor: " << instructores->getNombre() << endl;
-    s << "Especialidad: " << especialidad->getNombre() << endl;
+    s << "Especialidad: " << EspecialidadDeLaClase << endl;
     s << "Salón: " << salon << endl;
     s << "Horario: " << horario << endl;
     s << "Cupo máximo: " << cupoMax << endl;
     s << "Cantidad de matriculados: " << cantidadMatriculados << endl;
+    s << "--- Informacion del intstructor ---" << endl;
+    if(instructores != nullptr) {
+        s << instructores->tostring() << endl;
+    } else {
+        s << "No hay instructor asignado" << endl;
+    }
     return s.str();
 }

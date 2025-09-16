@@ -1,12 +1,11 @@
-#ifndef INSTRUCTORES_H
-#define INSTRUCTORES_H
+#ifndef INSTRUCTOR_H
+#define INSTRUCTOR_H
 #include <iostream>
 #include <string>
 #include <sstream>
-#include "especialidades.h"
+#include "especialidad.h"
 using namespace std;
-
-class especialidades;
+class especialidad;
 class instructor{
 private:
     string cedula;
@@ -14,19 +13,17 @@ private:
     string telefono;
     string correo;
     string fechaNaci;
-    especialidades** especialidad;
+    string** especialidades;
     int can;
-    int tam;
 public:
     instructor(string, string, string, string, string);
-    void agregarEspecialidad(especialidades *);
-    bool tieneEspecialidad(especialidades *);
+    void agregarEspecialidad(string *);
+    bool tieneEspecialidad(string *);
     string getCedula();
     string getNombre();
     string getTelefono();
     string getCorreo();
     string getFechaNaci();
-    especialidades** getEspecialidad();
     string tostring();
     ~instructor();
 };

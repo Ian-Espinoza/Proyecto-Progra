@@ -3,14 +3,18 @@
 #include <iostream>
 #include <string>
 using namespace std;
-class especialidad
-{
-private:  
-    string nombre;
+class especialidad{
+private:
+    string** Especialidades;
+    int tam;
 public:
-    especialidad(string);
-    string getNombre();
-    string nombreEspecialidad[8];
+    especialidad(); 
+
+    string* getEspecialidadNombre(int);
+
+    int getCantidadEspecialidades();
     void mostrarEspecialidades();
+    string getEspecialidadPorNumero(int);
+    ~especialidad();
 };
 #endif
