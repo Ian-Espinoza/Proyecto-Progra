@@ -35,7 +35,7 @@ bool instructor::tieneEspecialidad(string* e) {
     }
     return false;
 }
-string instructor::tostring() {
+string instructor::mostrarInstructor() {
     stringstream s;
     s << "--------------------------------------------------------------------"<<endl;
     s << "Nombre: "<<nombre<<endl;

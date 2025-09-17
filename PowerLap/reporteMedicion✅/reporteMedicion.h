@@ -4,7 +4,7 @@
 using namespace std;
 #include <string>
 class fecha;
-class medicion{
+class reporteMedicion{
 private:
     fecha fechas;
     float peso;

@@ -72,7 +72,7 @@ void claseGrupal::setHorario(string horario) {this->horario = horario;}
 void claseGrupal::setSalon(string salon) {this->salon = salon;}
 void claseGrupal::setCodigo(string codigo) {this->codigo = codigo;}
 
-string claseGrupal::tostring() {
+string claseGrupal::mostrarClase() {
     stringstream s;
     s << "===== Detalles de la Clase Grupal =====" << endl;
     s << "Código: " << codigo << endl;
@@ -83,7 +83,7 @@ string claseGrupal::tostring() {
     s << "Cantidad de matriculados: " << cantidadMatriculados << endl;
     s << "--- Informacion del intstructor ---" << endl;
     if(instructores != nullptr) {
-        s << instructores->tostring() << endl;
+        s << instructores->mostrarInstructor() << endl;
     } else {
         s << "No hay instructor asignado" << endl;
     }

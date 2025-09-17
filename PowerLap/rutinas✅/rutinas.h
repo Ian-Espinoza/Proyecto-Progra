@@ -15,6 +15,7 @@ private:
     int canBi;
     int canPi;
     int canEs;
+    int tam;
 public:
     rutinas();
     ~rutinas();

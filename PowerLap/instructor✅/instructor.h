@@ -24,7 +24,7 @@ public:
     string getTelefono();
     string getCorreo();
     string getFechaNaci();
-    string tostring();
+    string mostrarInstructor();
     ~instructor();
 };
 #endif

@@ -6,7 +6,7 @@
                 "${workspaceFolder}/PowerLap/**",
                 "${workspaceFolder}/PowerLap/rutinas✅",
                 "${workspaceFolder}/PowerLap/ejercicio✅",
-                "${workspaceFolder}/PowerLap/cliente",
+                "${workspaceFolder}/PowerLap/cliente✅",
                 "${workspaceFolder}/PowerLap/instructor✅",
                 "${workspaceFolder}/PowerLap/especialidad✅",
                 "${workspaceFolder}/PowerLap/historial",

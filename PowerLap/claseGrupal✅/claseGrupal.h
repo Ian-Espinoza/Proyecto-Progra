@@ -40,6 +40,6 @@ public:
     void verificarMatricula(string );
     void listadoMatriculados();
     int getCuposLibres();
-    string tostring();
+    string mostrarClase();
 };
 #endif

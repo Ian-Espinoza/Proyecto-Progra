@@ -5,10 +5,11 @@ rutinas::rutinas() {
     canBi = 0;
     canPi = 0;
     canEs = 0;
-    pechoTriceps = new ejercicio * [20];
-    biceps = new ejercicio * [20];
-    piernas = new ejercicio * [20];
-    espalda = new ejercicio * [20];
+    tam = 20;
+    pechoTriceps = new ejercicio * [tam];
+    biceps = new ejercicio * [tam];
+    piernas = new ejercicio * [tam];
+    espalda = new ejercicio * [tam];
 }
 rutinas::~rutinas() {
     for (int i = 0; i < canPe; ++i) { delete pechoTriceps[i]; }
@@ -22,7 +23,7 @@ rutinas::~rutinas() {
 }
 void rutinas::agregarEjercicio(ejercicio* e, string* area) {
     if (*area == "pecho" || *area == "triceps") {
-        if (canPe < 20) {
+        if (canPe < tam) {
             pechoTriceps[canPe++] = e;
         }
         else {
@@ -30,7 +31,7 @@ void rutinas::agregarEjercicio(ejercicio* e, string* area) {
         }
     }
     else if (*area == "biceps") {
-        if (canBi < 20) {
+        if (canBi < tam) {
             biceps[canBi++] = e;
         }
         else {
@@ -38,7 +39,7 @@ void rutinas::agregarEjercicio(ejercicio* e, string* area) {
         }
     }
     else if (*area == "piernas") {
-        if (canPi < 20) {
+        if (canPi < tam) {
             piernas[canPi++] = e;
         }
         else {
@@ -46,7 +47,7 @@ void rutinas::agregarEjercicio(ejercicio* e, string* area) {
         }
     }
     else if (*area == "espalda") {
-        if (canEs < 20) {
+        if (canEs < tam) {
             espalda[canEs++] = e;
         }
         else {
@@ -56,6 +57,8 @@ void rutinas::agregarEjercicio(ejercicio* e, string* area) {
     else {
         cout << "Area del cuerpo no valida" << endl;
     }
+    delete e;
+    delete area;
 }
 void rutinas::eliminarEjercicio(int codigo, string* area) {
     if (*area == "pecho" || *area == "triceps") {

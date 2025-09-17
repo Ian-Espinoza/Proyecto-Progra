@@ -1,15 +1,15 @@
 #include "especialidad.h"
 especialidad::especialidad(){
     tam = 8;
-    Especialidades = new string *[tam];
-    Especialidades[0] = new string("CrossFit");
-    Especialidades[1] = new string("HIIT");
-    Especialidades[2] = new string("TRX");
-    Especialidades[3] = new string("pesas");
-    Especialidades[4] = new string("spinning");
-    Especialidades[5] = new string("cardio");
-    Especialidades[6] = new string("yoga");
-    Especialidades[7] = new string("zumba");
+    Especialidades = [tam];
+    Especialidades[0] = "CrossFit";
+    Especialidades[1] = "HIIT";
+    Especialidades[2] = "TRX";
+    Especialidades[3] = "pesas";
+    Especialidades[4] = "spinning";
+    Especialidades[5] = "cardio";
+    Especialidades[6] = "yoga";
+    Especialidades[7] = "zumba";
 }
 string* especialidad::getEspecialidadNombre(int num){
     if (num > 0 && num <= tam) {

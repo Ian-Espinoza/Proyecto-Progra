@@ -1,8 +1,19 @@
-#include <iostream>
-using namespace std;
 #ifndef HISTORIAL_H
 #define HISTORIAL_H
-class historial
-{
+#include <iostream>
+using namespace std;
+class reporteMedicion;
+class historial{
+private:
+    reporteMedicion** mediciones;
+    int can;
+    int tam;
+public:
+    historial();
+    ~historial();
+    void agregarMedicion(reporteMedicion*);
+    void mostrarHistorial();
+    reporteMedicion* getUltimaMedicion();
+    int getCanMediciones();
 };
 #endif
