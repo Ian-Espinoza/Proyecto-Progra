@@ -11,7 +11,7 @@ private:
 public:
     historial();
     ~historial();
-    void agregarMedicion(reporteMedicion*);
+    bool agregarMedicion(reporteMedicion*);
     void mostrarHistorial();
     reporteMedicion* getUltimaMedicion();
     int getCanMediciones();

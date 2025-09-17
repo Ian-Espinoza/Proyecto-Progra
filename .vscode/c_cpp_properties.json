@@ -4,17 +4,17 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/PowerLap/**",
-                "${workspaceFolder}/PowerLap/rutinas✅",
-                "${workspaceFolder}/PowerLap/ejercicio✅",
-                "${workspaceFolder}/PowerLap/cliente✅",
-                "${workspaceFolder}/PowerLap/instructor✅",
-                "${workspaceFolder}/PowerLap/especialidad✅",
+                "${workspaceFolder}/PowerLap/rutinas",
+                "${workspaceFolder}/PowerLap/ejercicio",
+                "${workspaceFolder}/PowerLap/cliente",
+                "${workspaceFolder}/PowerLap/instructor",
+                "${workspaceFolder}/PowerLap/especialidad",
                 "${workspaceFolder}/PowerLap/historial",
                 "${workspaceFolder}/PowerLap/powerlab",
                 "${workspaceFolder}/PowerLap/sucursales",
-                "${workspaceFolder}/PowerLap/claseGrupal✅",
-                "${workspaceFolder}/PowerLap/fecha✅",
-                "${workspaceFolder}/PowerLap/reporteMedicion✅"
+                "${workspaceFolder}/PowerLap/claseGrupal",
+                "${workspaceFolder}/PowerLap/fecha",
+                "${workspaceFolder}/PowerLap/reporteMedicion"
             ],
             "defines": [
                 "_DEBUG",
