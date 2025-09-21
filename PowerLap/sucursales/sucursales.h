@@ -4,14 +4,11 @@
 #include <string>
 #include <sstream>
 using namespace std;
-#include "../cliente✅/cliente.h"
-#include "../instructor✅/instructor.h"
-#include "../claseGrupal✅/claseGrupal.h"
-#include "../reporteMedicion✅/reporteMedicion.h"
 
 class cliente;
 class instructor;
 class claseGrupal;
+
 class sucursales{
 private:
     int codigo;
@@ -58,11 +55,11 @@ public:
     void agregarClase(claseGrupal*);
     cliente* buscarCliente(string);
     instructor* buscarInstructor(string);
-    claseGrupal* buscarClase(int);
+    claseGrupal* buscarClase(string);
     void listarClientes();
     void listarInstructores();
     void listarClases();
     void generarReporteIMC();
     string mostrarSucursal();
 };
-#endif  
+#endif

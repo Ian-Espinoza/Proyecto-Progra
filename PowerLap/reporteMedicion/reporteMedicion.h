@@ -1,10 +1,12 @@
 #ifndef REPORTEMEDICION_H
 #define REPORTEMEDICION_H
-#include "fecha.h"
+#include "../fecha/fecha.h"
 using namespace std;
 #include <string>
+
 class fecha;
-class reporteMedicion{
+
+class reporteMedicion {
 private:
     fecha fechas;
     float peso;
@@ -19,8 +21,8 @@ private:
     float muslo;
     float imc;
 public:
-    medicion();
-    medicion(fecha, float, float, float, float ,float ,int , float, float, float, float, float);
+    reporteMedicion();
+    reporteMedicion(fecha, float, float, float, float, float, int, float, float, float, float, float);
     fecha getfecha();
     float getPeso();
     float getEstatura();
@@ -39,7 +41,7 @@ public:
     void setEstatura(float);
     void setPorcentajeGrasa(float);
     void setPorcentajeMusculo(float);
-     void setGrasaViseral(float);
+    void setGrasaViseral(float);
     void setEdadMetabolica(int);
     void setCintura(float);
     void setCadera(float);
@@ -48,10 +50,9 @@ public:
     void setIMC(float);
 
     float calcularIMC();
-    float calcularProteinaRequerida (char , bool);
-    string tostring(); //NO BORRE ESTO QUE YA LO VEO VENIR, mostrar medicion
+    float calcularProteinaRequerida(char, bool);
+    string tostring();
     string obtenerClasificacionIMC();
     int calcularVasosAgua();
-        
 };
 #endif

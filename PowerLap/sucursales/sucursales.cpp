@@ -1,9 +1,14 @@
-#include"sucursales.h"
+#include "sucursales.h"
+#include "../cliente/cliente.h"
+#include "../instructor/instructor.h"
+#include "../claseGrupal/claseGrupal.h"
+#include "../reporteMedicion/reporteMedicion.h"
 
 sucursales::sucursales(){
-    codigo = "";
+    codigo = 0;
     nombre = "";
-    direccion = "";
+    provincia = "";
+    canton = "";
     telefono = "";
     correo = "";
     canClientes = 0;
@@ -16,7 +21,7 @@ sucursales::sucursales(){
     tamClases = 8;
     clases = new claseGrupal*[tamClases];
 }
-sucursales::sucursales(int codigo, string nombre,string provincia, string canton, string telefono, string correo){
+sucursales::sucursales(int codigo, string nombre, string provincia, string canton, string telefono, string correo){
     this->codigo = codigo;
     this->nombre = nombre;
     this->provincia = provincia;
@@ -109,7 +114,7 @@ instructor* sucursales::buscarInstructor(string cedula){
     return nullptr;
 }
 
-claseGrupal* sucursales::buscarClase(int id){
+claseGrupal* sucursales::buscarClase(string id){
     for(int i = 0; i < canClases; i++){
         if(clases[i]->getCodigo() == id){
             return clases[i];
@@ -160,18 +165,16 @@ void sucursales::generarReporteIMC(){
         cout << "No hay clientes en esta sucursal" << endl;
         return;
     }
-    else{
-        for(int i = 0; i < canClientes; i++){
-            cliente* cli = clientes[i];
-            reporteMedicion* rep = cli->ultimaMedicion();
-            cout << "Cliente: " << cli->getNombre() << endl;
-            if(rep != nullptr){
-                cout << "Fecha de la ultima medicion: " << rep->getFecha() << endl;
-                cout << "IMC: " << rep->getIMC() << endl;
-                cout << "Clasificacion: " << rep->obtenerClasificacionIMC() << endl;
-            } else {
-                cout << "No hay mediciones registradas para este cliente." << endl; 
-            }
+    for(int i = 0; i < canClientes; i++){
+        cliente* cli = clientes[i];
+        reporteMedicion* rep = cli->ultimaMedicion();
+        cout << "Cliente: " << cli->getNombre() << endl;
+        if(rep != nullptr){
+            cout << "Fecha de la ultima medicion: " << rep->getfecha().tostring() << endl;
+            cout << "IMC: " << rep->getIMC() << endl;
+            cout << "Clasificacion: " << rep->obtenerClasificacionIMC() << endl;
+        } else {
+            cout << "No hay mediciones registradas para este cliente." << endl; 
         }
     }
 }

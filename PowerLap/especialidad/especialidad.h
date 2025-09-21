@@ -5,7 +5,7 @@
 using namespace std;
 class especialidad{
 private:
-    string* Especialidades;
+    string* especialidades;
     int tam;
 public:
     especialidad(); 

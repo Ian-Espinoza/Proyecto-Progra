@@ -3,9 +3,8 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include "especialidad.h"
 using namespace std;
-class especialidad;
+
 class instructor{
 private:
     string cedula;

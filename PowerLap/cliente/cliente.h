@@ -4,13 +4,14 @@
 #include <string>
 #include <sstream>
 using namespace std;
-class sucursal;
+
+class sucursales;
 class claseGrupal;
 class rutinas;
 class reporteMedicion;
 class instructor;
-class cliente
-{
+
+class cliente {
 private:
     string cedula;
     string nombre;
@@ -19,54 +20,49 @@ private:
     string fechaNaci;
     char sexo;
     string fechaInscripcion;
-
-    sucursal* sucursalCliente;
+    sucursales* sucursalCliente;
     instructor* instructorCliente;
-    rutinas *rutinaActual;
+    rutinas* rutinaActual;
     reporteMedicion** mediciones;
-    claseGrupal** clasesMatriculadas;
-    
     int canMediciones;
+    claseGrupal** clasesMatriculadas;
     int canClases;
-
 public:
     cliente();
     ~cliente();
-    
+
     string getCedula();
     string getNombre();
     string getTelefono();
     string getCorreo();
     string getFechaNaci();
     char getSexo();
-    string getFechaInscripción();
-    sucursal* getSucursalCliente();
+    string getFechaInscripcion();
+    sucursales* getSucursalCliente();
     instructor* getInstructorCliente();
     rutinas* getRutinaActual();
     reporteMedicion** getMediciones();
-    int getCanMediciones();
     claseGrupal** getClasesMatriculadas();
+    int getCanMediciones();
     int getCantidadClases();
-    
+    reporteMedicion* ultimaMedicion();
+
     void setCedula(string);
     void setNombre(string);
     void setTelefono(string);
     void setCorreo(string);
     void setFechaNaci(string);
     void setSexo(char);
-    void setFechaInscripción(string);
-    void setSucursalCliente(sucursal*);
+    void setFechaInscripcion(string);
+    void setSucursalCliente(sucursales*);
     void setInstructorCliente(instructor*);
-    
-    void agregarMedicion(reporteMedicion *);
-    void asignarRutina(rutinas *);
+
+    void agregarMedicion(reporteMedicion*);
+    void asignarRutina(rutinas*);
     bool matricularClase(claseGrupal*);
     bool desmatricularClase(claseGrupal*);
     void mostrarhistorialMediciones();
     void mostrarClasesMatriculadas();
-    reporteMedicion* ultimaMedicion();
-    
     string mostrarCliente();
-
 };
 #endif

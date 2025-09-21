@@ -1,5 +1,10 @@
-#include"claseGrupal.h"
-#include"especialidad.h"
+#include "claseGrupal.h"
+#include <iostream>
+#include <sstream>
+#include <string>
+#include "../cliente/cliente.h"
+#include "../instructor/instructor.h"
+
 claseGrupal::claseGrupal(string codigo, string EspecialidadDeLaClase, string salon, string horario, int cupoMax, instructor* instructores) {
     this->codigo = codigo;
     this->EspecialidadDeLaClase = EspecialidadDeLaClase;
@@ -15,21 +20,23 @@ bool claseGrupal::matricular(cliente* c) {
     if (cantidadMatriculados < cupoMax) {
         matriculados[cantidadMatriculados++] = c;
         return true;
-    }
-    else {
+    } else {
         cout << "No hay cupos disponibles en la clase grupal " << codigo << endl;
         return false;
     }
 }
+
 void claseGrupal::listadoMatriculados() {
     cout << "Listado de matriculados en la clase grupal " << codigo << ":" << endl;
     for (int i = 0; i < cantidadMatriculados; i++) {
         cout << "- " << matriculados[i]->getNombre() << " (Cédula: " << matriculados[i]->getCedula() << ")" << endl;
     }
 }
+
 int claseGrupal::getCuposLibres() {
     return cupoMax - cantidadMatriculados;
 }
+
 claseGrupal::~claseGrupal() {
     delete[] matriculados;
 }
@@ -43,6 +50,7 @@ void claseGrupal::verificarMatricula(string cedula) {
     }
     cout << "El cliente con cédula " << cedula << " no está matriculado en la clase grupal " << codigo << "." << endl;
 }
+
 bool claseGrupal::desmatricular(string cedula) {
     for (int i = 0; i < cantidadMatriculados; i++) {
         if (matriculados[i]->getCedula() == cedula) {
@@ -58,19 +66,18 @@ bool claseGrupal::desmatricular(string cedula) {
     return false;
 }
 
-string claseGrupal::getCodigo() {return codigo;}
-string claseGrupal::getSalon() {return salon;}
-string claseGrupal::getHorario() {return horario;}
-int claseGrupal::getCupoMax() {return cupoMax;}
-int claseGrupal::getCantidadMatriculados() {return cantidadMatriculados;}
-instructor* claseGrupal::getInstructor() {return instructores;}
+string claseGrupal::getCodigo() { return codigo; }
+string claseGrupal::getSalon() { return salon; }
+string claseGrupal::getHorario() { return horario; }
+int claseGrupal::getCupoMax() { return cupoMax; }
+int claseGrupal::getCantidadMatriculados() { return cantidadMatriculados; }
+instructor* claseGrupal::getInstructor() { return instructores; }
 
-void claseGrupal::setInstructor(instructor* instructor) {this->instructores = instructor;}
-void claseGrupal::setCantidadMatriculados(int cantidadMatriculados) {this->cantidadMatriculados = cantidadMatriculados;}
-void claseGrupal::setCupoMax(int cupoMax) {this->cupoMax = cupoMax;}
-void claseGrupal::setHorario(string horario) {this->horario = horario;}
-void claseGrupal::setSalon(string salon) {this->salon = salon;}
-void claseGrupal::setCodigo(string codigo) {this->codigo = codigo;}
+void claseGrupal::setInstructor(instructor* instructor) { this->instructores = instructor; }
+void claseGrupal::setCupoMax(int cupoMax) { this->cupoMax = cupoMax; }
+void claseGrupal::setHorario(string horario) { this->horario = horario; }
+void claseGrupal::setSalon(string salon) { this->salon = salon; }
+void claseGrupal::setCodigo(string codigo) { this->codigo = codigo; }
 
 string claseGrupal::mostrarClase() {
     stringstream s;
@@ -82,7 +89,7 @@ string claseGrupal::mostrarClase() {
     s << "Cupo máximo: " << cupoMax << endl;
     s << "Cantidad de matriculados: " << cantidadMatriculados << endl;
     s << "--- Informacion del intstructor ---" << endl;
-    if(instructores != nullptr) {
+    if (instructores != nullptr) {
         s << instructores->mostrarInstructor() << endl;
     } else {
         s << "No hay instructor asignado" << endl;

@@ -1,20 +1,10 @@
-#include "powerlab/powerlab.h"
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    // 1. Crea el objeto principal del sistema en memoria dinámica
-    powerlab *miGimnasio = new powerlab();
+#include "powerlab/PowerLab.h"
 
-    // Opcional: Aquí podrías llamar a una función para cargar datos de prueba
-    // miGimnasio->cargarDatosDePrueba();
-
-    // 2. Inicia la interfaz de usuario llamando al menú principal
-    miGimnasio->menuPrincipal();
-
-    // 3. Libera la memoria del objeto principal al salir del programa
-    delete miGimnasio;
-
+int main() {
+    PowerLab app;
+    app.run();
     return 0;
 }

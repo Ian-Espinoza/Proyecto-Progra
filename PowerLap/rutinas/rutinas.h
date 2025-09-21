@@ -1,9 +1,10 @@
 #ifndef RUTINAS_H
 #define RUTINAS_H
-#include<iostream>
-#include "ejercicio.h"
+#include <iostream>
 using namespace std;
+
 class ejercicio;
+
 class rutinas
 {   
 private:
@@ -19,7 +20,7 @@ private:
 public:
     rutinas();
     ~rutinas();
-    void agregarEjercicio(ejercicio*,string*);
+    void agregarEjercicio(ejercicio*, string*);
     void eliminarEjercicio(int, string*);
     void mostrarRutina();
 

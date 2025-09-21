@@ -30,6 +30,6 @@ string ejercicio::tostring() {
     s << "Codigo: " << codigo << endl;
     s << "Nombre: " << nombre << endl;
     s << "Descripcion: " << descripcion << endl;
-    s << "Area del cuerpo: " << areaCuerpo << endl;
+    s << "Area: " << areaCuerpo << endl;
     return s.str();
 }

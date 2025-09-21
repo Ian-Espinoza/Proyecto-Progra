@@ -1,5 +1,5 @@
 #include "rutinas.h"
-#include "ejercicio.h"
+#include "../ejercicio/ejercicio.h"
 rutinas::rutinas() {
     canPe = 0;
     canBi = 0;
@@ -25,40 +25,30 @@ void rutinas::agregarEjercicio(ejercicio* e, string* area) {
     if (*area == "pecho" || *area == "triceps") {
         if (canPe < tam) {
             pechoTriceps[canPe++] = e;
-        }
-        else {
+        } else {
             cout << "No se pueden agregar mas ejercicios de pecho y triceps" << endl;
         }
-    }
-    else if (*area == "biceps") {
+    } else if (*area == "biceps") {
         if (canBi < tam) {
             biceps[canBi++] = e;
-        }
-        else {
+        } else {
             cout << "No se pueden agregar mas ejercicios de biceps" << endl;
         }
-    }
-    else if (*area == "piernas") {
+    } else if (*area == "piernas") {
         if (canPi < tam) {
             piernas[canPi++] = e;
-        }
-        else {
+        } else {
             cout << "No se pueden agregar mas ejercicios de piernas" << endl;
         }
-    }
-    else if (*area == "espalda") {
+    } else if (*area == "espalda") {
         if (canEs < tam) {
             espalda[canEs++] = e;
-        }
-        else {
+        } else {
             cout << "No se pueden agregar mas ejercicios de espalda" << endl;
         }
-    }
-    else {
+    } else {
         cout << "Area del cuerpo no valida" << endl;
     }
-    delete e;
-    delete area;
 }
 void rutinas::eliminarEjercicio(int codigo, string* area) {
     if (*area == "pecho" || *area == "triceps") {
@@ -74,8 +64,7 @@ void rutinas::eliminarEjercicio(int codigo, string* area) {
             }
         }
         cout << "Ejercicio no encontrado en pecho y triceps" << endl;
-    }
-    else if (*area == "biceps") {
+    } else if (*area == "biceps") {
         for (int i = 0; i < canBi; ++i) {
             if (biceps[i]->getCodigo() == codigo) {
                 delete biceps[i];
@@ -88,8 +77,7 @@ void rutinas::eliminarEjercicio(int codigo, string* area) {
             }
         }
         cout << "Ejercicio no encontrado en biceps" << endl;
-    }
-    else if (*area == "piernas") {
+    } else if (*area == "piernas") {
         for (int i = 0; i < canPi; ++i) {
             if (piernas[i]->getCodigo() == codigo) {
                 delete piernas[i];
@@ -115,8 +103,7 @@ void rutinas::eliminarEjercicio(int codigo, string* area) {
             }
         }
         cout << "Ejercicio no encontrado en espalda" << endl;
-    }
-    else {
+    } else {
         cout << "Area del cuerpo no valida" << endl;
     }
 }
